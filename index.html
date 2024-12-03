@@ -12,21 +12,54 @@
 </head>
 
 <body>
-    <header>
-        <h1>
-            Calcutron 8000-V
-        </h1>
-    </header>
-    <main>
-        <p>
-            The ultimate calculating calculator, pronounced calculay-TOR.
-        </p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Calcutron Enterprises</p>
-    </footer>
+
+    <div id="displayContainer">
+        <div id="display">
+            <p>The answer is: ${237,387}</p>
+        </div>
+    </div>
+
+    <div id="numbers">
+        <div id="row1" class="number">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+        <div id="row2" class="number">
+            <ul>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+        </div>
+        <div id="row3" class="number">
+            <ul>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        <div id="row4" class="number">
+            <ul>
+                <li>#</li>
+                <li>0</li>
+                <li>*</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="operators">
+        <div id="add" class="operator">+</div>
+        <div id="subtract" class="operator">-</div>
+        <div id="multiply" class="operator">x</div>
+        <div id="divide" class="operator">÷</div>
+    </div>
+
+
     <!-- To link external javascript file -->
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
