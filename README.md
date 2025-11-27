@@ -1,91 +1,68 @@
-# Calcutron 8000
+# Foundations Calculator
 
-![Calculator Screenshot](deploy-root/images/calcutron-8000-v1.png)  
-*A functional calculator built from scratch.*
-[Live Project Demo](https://calcutron-8000.netlify.app/)
+![Calculator Screenshot](deploy-root/images/calcutron-8000-v1.png) 
 
-## Description
+#### [**Live Demo:** calcutron-8000.netlify.app](https://calcutron-8000.netlify.app/)
 
-The **Foundations Calculator** is an on-screen calculator crafted with **JavaScript**, **HTML**, and **CSS** as the final project for The Odin Project's Foundations Course. This application demonstrates my mastery of front-end development fundamentals, including DOM manipulation, event handling, and responsive design. It’s a practical tool that performs basic arithmetic operations while handling edge cases with elegance and precision.
 
-## Features
+## Project Overview
 
-- **Core Operations**: Addition, subtraction, multiplication, and division.
-- **Intuitive Interface**: Buttons for digits (0-9), operators (+, -, *, /), equals (=), and a clear function.
-- **Real-Time Feedback**: Display updates instantly as users input numbers and operators.
-- **Edge Case Handling**: Custom error message for division by zero; prevents incomplete expression evaluation.
-- **Precision**: Rounds long decimal results to avoid display overflow.
-- **Single-Pair Evaluation**: Processes one pair of numbers at a time, mimicking real calculator behavior.
+This was my final project for The Odin Project's [Foundations Course]((https://www.theodinproject.com/paths/foundations/courses/foundations)) - a solo capstone that brought together everything I'd learned about HTML, CSS, and JavaScript. I built a functional calculator from the ground up, starting with basic arithmetic functions and working through the complex logic of handling user input sequences.
 
-## Technologies Used
+## What I Built
 
-- **HTML5**: Structures the calculator’s layout and interface.
-- **CSS3**: Delivers a modern, polished design with responsive styling.
-- **JavaScript**: Powers the logic, interactivity, and state management.
+The calculator handles the four basic operations:
+- Addition, subtraction, multiplication, division
+- Digit buttons (0-9) and operator buttons
+- A display that shows input and results
+- Calculate button to perform operations
 
-## Installation/Setup Instructions
+## The Learning Journey
 
-Get the calculator running locally in just a few steps:
+### Starting Point
+I began by creating the core math functions (`add`, `subtract`, `multiply`, `divide`) and testing them in the browser console. Simple stuff, but it was my first time organizing functions that would work together.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/foundations-calculator.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd foundations-calculator
-   ```
-3. Open `index.html` in your web browser:
-   - Simply double-click the file or use a local server (e.g., `npx live-server`).
+### The Hard Part
+The biggest challenge was figuring out the calculator's logic flow. How do you handle the sequence of: number → operator → number → calculate? I went through several iterations:
 
-No dependencies required—just pure vanilla code!
+- **First attempt**: Used a simple counter system to track clicks (1, 2, 3...) - you can see this in `script_v2_mise_stage.js` where I started with `if 1st click, store value to "a"`
+- **Problem**: This was rigid and broke easily if users clicked out of sequence - the `script_v3_working_all_buttons_linked_manually.js` shows my pseudocode struggles
+- **Solution**: Eventually figured out proper state management to track first number, operator, and second number - see the working version in `deploy-root/script.js`
 
-## Usage
+### What I Struggled With
 
-- **Input Numbers**: Click digit buttons (0-9) to build your numbers.
-- **Select Operator**: Choose +, -, *, or / to set the operation.
-- **Calculate**: Press = to see the result.
-- **Reset**: Hit the Clear button to start fresh.
+- **Event handling**: Getting buttons to respond correctly took many tries - see `script_v1.js` for my first attempts with basic alerts
+- **State management**: Keeping track of which number was being input and when to calculate - the counter system in `deploy-root/script.js` shows my solution
+- **DOM manipulation**: Updating the display at the right time - struggled with this across multiple iterations
+- **Edge cases**: Division by zero, incomplete expressions - handled in the final version but took several tries to get right
 
-*Example*: Click `3`, `+`, `5`, then `=`. The display shows `8`.
+You can see my thought process in the `test_run.js` file - it's full of pseudocode and failed attempts that eventually led to the working solution.
 
-## Challenges and Learnings
+## How It Works
 
-This project pushed my skills to new heights. Key takeaways include:
+The calculator uses a simple state machine approach:
+1. User clicks a digit → stores as first number
+2. User clicks an operator → stores operation type  
+3. User clicks second digit → stores as second number
+4. User clicks Calculate → performs the operation and shows result
 
-- **Operation Logic**: Built a robust `operate()` function to handle number-operator-number sequences, ensuring evaluations only trigger with complete expressions.
-- **Edge Cases**: Tackled division by zero with a snarky “Nice try!” message and prevented crashes from premature equals presses or consecutive operators.
-- **UI/UX**: Balanced functionality with aesthetics, using CSS to create an intuitive button layout and readable display.
+## What I'd Do Differently Now
 
-These challenges deepened my expertise in JavaScript event listeners, state management, and CSS grid/flexbox layouts.
+Looking back, I can see several areas where I'd improve this:
+- Better error handling instead of alerts
+- Keyboard support for accessibility
+- Clear button to reset between calculations
+- More robust state management
 
-## Future Improvements
+But that's the point of learning projects - they show where you started and how much you've grown.
 
-- **Advanced Functions**: Add exponents, square roots, or percentages.
-- **Keyboard Support**: Enable number and operator input via keyboard for accessibility.
-- **Theming**: Introduce light/dark modes or custom styles.
-- **Calculation History**: Store and display past results.
+## Running the Project
 
-## Contributing
+1. Open `deploy-root/index.html` in your browser
+2. Or clone and run locally with any web server
 
-This project is primarily a learning showcase, but I’m open to collaboration! To contribute:
+No build process needed - just vanilla HTML, CSS, and JavaScript.
 
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/awesome-improvement`).
-3. Commit your changes (`git commit -m "Add awesome improvement"`).
-4. Push to your branch (`git push origin feature/awesome-improvement`).
-5. Open a pull request.
-
-## License
-
-This project is released under the [MIT License](LICENSE). Feel free to use, modify, or distribute it as you see fit.
-
-## Contact Information
-
-Let’s connect!  
-- **Email**: garebearcodes@gmail.com  
-- **GitHub**: @myopicOracle
-- **LinkedIn**: linkedin.com/in/xiagary
 
 ---
-*https://calcutron-8000.netlify.app/*
+***Project Link**: [The Odin Project - Foundations Calculator](https://www.theodinproject.com/lessons/foundations-calculator)*
